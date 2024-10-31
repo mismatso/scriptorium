@@ -12,43 +12,38 @@ Asegúrate de tener Vagrant instalado y las instancias que deseas gestionar con 
 
 #### **Instalación de VUP**
 
-1. Clona el repositorio **Scriptorium**:
+1. Descarga el script `vup.sh`:
 
-    Si tienes una clave SSH configurada en GitHub:
+    Si tiene `curl` instalado:
     ```bash
-    git clone git@github.com:mismatso/scriptorium.git
+    curl -o vup.sh -L https://raw.githubusercontent.com/mismatso/scriptorium/main/scripts/vup.sh
     ```
-    Si prefieres la URL HTTPS:
+    Si prefiere usar el clásico `wget`:
     ```bash
-    git clone https://github.com/mismatso/scriptorium.git
+    wget -O vup.sh https://raw.githubusercontent.com/mismatso/scriptorium/main/scripts/vup.sh
     ```
 
-2. Ingresa al directorio del repositorio:
-   ```bash
-   cd scriptorium
-   ```
-
-3. Crea un directorio para alojar los scripts:
+2. Crea un directorio para alojar los scripts:
    ```bash
    sudo mkdir -p /opt/scriptorium
    ```
 
-4. Copia el script `vup` a este directorio:
+3. Mueve el script `vup` a este directorio:
    ```bash
-   sudo cp scripts/vup.sh /opt/scriptorium
+   sudo mv vup.sh /opt/scriptorium
    ```
 
-5. Otorga permisos de ejecución del script `vup.sh`:
+4. Otorga permisos de ejecución al script `vup.sh`:
    ```bash
    sudo chmod o+x /opt/scriptorium/vup.sh
    ```
 
-6. Crea un enlace simbólico para ejecutarlo desde cualquier ubicación:
+5. Crea un enlace simbólico para ejecutarlo desde cualquier ubicación:
    ```bash
    sudo ln -s /opt/scriptorium/vup.sh /usr/local/bin/vup
    ```
 
-`vup` ya está listo para usarse desde cualquier ubicación en tu sistema.
+¡Listo! Ahora puedes ejecutar `vup` desde cualquier ubicación en tu sistema.
 
 #### **Ejecutar VUP**
 

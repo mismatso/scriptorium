@@ -17,33 +17,33 @@ sudo apt install pdftk ghostscript
 
 #### **Instalación de CPDF**
 
-1. Clona el repositorio **Scriptorium**:
+1. Descarga el script `cpdf.sh`:
 
-    Si tienes una clave SSH configurada en GitHub:
+    Si tiene `curl` instalado:
     ```bash
-    git clone git@github.com:mismatso/scriptorium.git
+    curl -o cpdf.sh -L https://raw.githubusercontent.com/mismatso/scriptorium/main/scripts/cpdf.sh
     ```
-    Si prefieres la URL HTTPS:
+    Si prefiere usar el clásico `wget`:
     ```bash
-    git clone https://github.com/mismatso/scriptorium.git
+    wget -O cpdf.sh https://raw.githubusercontent.com/mismatso/scriptorium/main/scripts/cpdf.sh
     ```
-
-1. Ingresa al directorio del repositorio:
-   ```bash
-   cd scriptorium
-   ```
 
 2. Crea un directorio para alojar los scripts:
    ```bash
    sudo mkdir -p /opt/scriptorium
    ```
 
-3. Copia el script `cpdf` a este directorio:
+3. Mueve el script `cpdf` a este directorio:
    ```bash
-   sudo cp scripts/cpdf.sh /opt/scriptorium
+   sudo mv cpdf.sh /opt/scriptorium
    ```
 
-4. Crea un enlace simbólico para ejecutarlo desde cualquier ubicación:
+4. Otorga permisos de ejecución al script `cpdf.sh`:
+   ```bash
+   sudo chmod o+x /opt/scriptorium/cpdf.sh
+   ```
+
+5. Crea un enlace simbólico para ejecutarlo desde cualquier ubicación:
    ```bash
    sudo ln -s /opt/scriptorium/cpdf.sh /usr/local/bin/cpdf
    ```
