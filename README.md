@@ -70,7 +70,7 @@ El script `vup` facilita la gestión de máquinas virtuales Vagrant, permitiendo
 
 #### **Prerrequisitos**
 
-Asegúrate de tener Vagrant instalado y las instancias aprovisionadas que deseas gestionar con `vup`.
+Asegúrate de tener Vagrant instalado y las instancias que deseas gestionar con `vup` aprovisionadas.
 
 #### **Instalación de VUP**
 
@@ -100,7 +100,12 @@ Asegúrate de tener Vagrant instalado y las instancias aprovisionadas que deseas
    sudo cp scripts/vup.sh /opt/scriptorium
    ```
 
-5. Crea un enlace simbólico para ejecutarlo desde cualquier ubicación:
+5. Otorga permisos de ejecución del script `vup.sh`:
+   ```bash
+   sudo chmod o+x /opt/scriptorium/vup.sh
+   ```
+
+6. Crea un enlace simbólico para ejecutarlo desde cualquier ubicación:
    ```bash
    sudo ln -s /opt/scriptorium/vup.sh /usr/local/bin/vup
    ```
@@ -116,15 +121,30 @@ Para iniciar una instancia Vagrant y conectarte a ella mediante SSH, usa `vup` s
    vagrant global-status
    ```
 
-2. Para iniciar y conectarte a una instancia (por ejemplo, `webserver`):
+2. Si la _cache_ de la información de instancias de Vagrant está desactualizada, debe limpiarla (antes de utilizar `vup`) y luego iniciar manualmente cada instancia con `vagrant up` para reconstruir la información de las instancias:
+   ```bash
+   vagrant global-status --prune
+   ```
+
+3. Para iniciar y conectarte a una instancia (por ejemplo, `webserver`):
    ```bash
    vup webserver
    ```
 
-3. Para apagar la misma instancia:
+4. Para apagar la misma instancia:
    ```bash
    vup webserver -d
    ```
+
+5. Para iniciar todas instancias de _Vagrant_:
+   ```bash
+   vup --all -u
+   ```
+
+6. Para apagar todas instancias de _Vagrant_:
+   ```bash
+   vup --all -d
+   ```   
 
 ## **«Self-Promotion»**
 
