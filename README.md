@@ -20,9 +20,13 @@ Si prefieres la URL HTTPS:
 git clone https://github.com/mismatso/scriptorium.git
 ```
 
-## **«Self-Promotion»**
+## **Self-Promotion**
 
-Si lo desea, puede visitar mi canal de YouTube [MizaqScreencasts](https://www.youtube.com/MizaqScreencasts), seguirme en [Twitter](https://twitter.com/mismatso) o escribirme por [Telegram](https://t.me/mismatso).
+Si lo desea, puede:
+
+- Visitar mi canal de YouTube [MizaqScreencasts](https://www.youtube.com/MizaqScreencasts)
+- Seguirme en [Twitter](https://twitter.com/mismatso)
+- Contactarme por [Telegram](https://t.me/mismatso)
 
 ## **Licencia**
 

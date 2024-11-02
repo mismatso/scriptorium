@@ -6,10 +6,9 @@ VERSION="0.8.2"
 # Función para mostrar ayuda
 show_help() {
     echo
-    echo "┏━━━━━━━━━━━━━━━━┓"
-    echo "┃ VUP — By.Mizaq ┃"
-    echo "┗━━━━━━━━━━━━━━━━┛"
-    echo "Version $VERSION"
+    echo "┏━━━━━━━━━━━━━━━━━━━━━━━━┓"
+    echo "┃ VUP v$(printf '%-6s' "$VERSION") — By.Mizaq ┃"
+    echo "┗━━━━━━━━━━━━━━━━━━━━━━━━┛"
     echo
     echo "NOMBRE"
     echo "     vup - Facilita la gestión de máquinas virtuales Vagrant,"

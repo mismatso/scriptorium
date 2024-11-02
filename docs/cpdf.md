@@ -1,12 +1,12 @@
 [↩︎ Volver al índice](/README.md)
 
-## **CPDF**
+# **CPDF**
 
 El script `cpdf` permite comprimir archivos PDF, alcanzando una tasa de compresión de aproximadamente 13%. En pruebas realizadas, ha logrado reducir el tamaño de los archivos hasta en un 86%.
 
-### **Uso de CPDF**
+## **Instalación y uso de CPDF**
 
-#### **Prerrequisitos**
+### **Prerrequisitos**
 
 Para que `cpdf` funcione, primero instala los paquetes necesarios. En GNU/Linux Debian, ejecuta:
 
@@ -15,7 +15,7 @@ sudo apt update
 sudo apt install pdftk ghostscript
 ```
 
-#### **Instalación de CPDF**
+### **Instalación de CPDF**
 
 1. Descarga el script `cpdf.sh`:
 
@@ -50,7 +50,7 @@ sudo apt install pdftk ghostscript
 
 ¡Listo! Ahora puedes ejecutar `cpdf` desde cualquier ubicación en tu sistema.
 
-#### **Ejecutar CPDF**
+### **Utilizando CPDF para comprimir mis archivos PDF**
 
 Para comprimir un archivo PDF con CPDF simplemente abre una terminal en la ubicación del archivo y ejecuta `cpdf archivo-sin-comprimir.pdf`.
 
@@ -64,9 +64,13 @@ Para comprimir un archivo PDF con CPDF simplemente abre una terminal en la ubica
    for file in *_comprimido*; do base_name="${file%_comprimido*}"; du -h "${base_name}"* 2>/dev/null; done | sort -u
    ```
 
-## **«Self-Promotion»**
+## **Self-Promotion**
 
-Si lo desea, puede visitar mi canal de YouTube [MizaqScreencasts](https://www.youtube.com/MizaqScreencasts), seguirme en [Twitter](https://twitter.com/mismatso) o escribirme por [Telegram](https://t.me/mismatso).
+Si lo desea, puede:
+
+- Visitar mi canal de YouTube [MizaqScreencasts](https://www.youtube.com/MizaqScreencasts)
+- Seguirme en [Twitter](https://twitter.com/mismatso)
+- Contactarme por [Telegram](https://t.me/mismatso)
 
 ## **Licencia**
 

@@ -1,87 +1,115 @@
 [↩︎ Volver al índice](/README.md)
 
-## **VUP**
+# **VUP**
 
 El script `vup` facilita la gestión de máquinas virtuales Vagrant, permitiendo arrancarlas y conectarse a ellas, o bien apagarlas, sin necesidad de navegar al directorio del `Vagrantfile`.
 
-### **Uso de VUP**
+## **Instalación y uso de VUP**
 
-#### **Prerrequisitos**
+### **Prerrequisitos**
 
-Asegúrate de tener Vagrant instalado y las instancias que deseas gestionar con `vup` aprovisionadas.
+Asegúrese de tener Vagrant instalado y las instancias que desea gestionar con `vup` aprovisionadas.
 
-#### **Instalación de VUP**
+### **Instalación de VUP**
 
-1. Descarga el script `vup.sh`:
+1. Descargue el script `vup.sh`:
 
     Si tiene `curl` instalado:
     ```bash
     curl -o vup.sh -L https://raw.githubusercontent.com/mismatso/scriptorium/main/scripts/vup.sh
     ```
-    Si prefiere usar el clásico `wget`:
+    Si prefiere usar `wget`:
     ```bash
     wget -O vup.sh https://raw.githubusercontent.com/mismatso/scriptorium/main/scripts/vup.sh
     ```
 
-2. Crea un directorio para alojar los scripts:
+2. Cree un directorio para alojar los scripts:
    ```bash
    sudo mkdir -p /opt/scriptorium
    ```
 
-3. Mueve el script `vup` a este directorio:
+3. Mueva el script `vup` a este directorio:
    ```bash
    sudo mv vup.sh /opt/scriptorium
    ```
 
-4. Otorga permisos de ejecución al script `vup.sh`:
+4. Otorgue permisos de ejecución al script `vup.sh`:
    ```bash
-   sudo chmod o+x /opt/scriptorium/vup.sh
+   sudo chmod +x /opt/scriptorium/vup.sh
    ```
 
-5. Crea un enlace simbólico para ejecutarlo desde cualquier ubicación:
+5. Cree un enlace simbólico para ejecutarlo desde cualquier ubicación:
    ```bash
    sudo ln -s /opt/scriptorium/vup.sh /usr/local/bin/vup
    ```
 
-¡Listo! Ahora puedes ejecutar `vup` desde cualquier ubicación en tu sistema.
+¡Listo! Ahora puede ejecutar `vup` desde cualquier ubicación en su sistema.
 
-#### **Ejecutar VUP**
+### **Verificación de Caché en Vagrant**
 
-Para iniciar una instancia Vagrant y conectarte a ella mediante SSH, usa `vup` seguido del nombre o ID de la instancia.
+El correcto funcionamiento de `vup` depende de la información que se obtiene de _Vagrant_ a través del comando `vagrant global-status`. Si esta información está desactualizada o es inválida, debe regenerar la caché antes de usar `vup`.
 
-1. Obtén el ID o nombre de tus instancias Vagrant con:
+1. Verifique la información de la caché de _Vagrant_ con:
    ```bash
    vagrant global-status
    ```
 
-2. Si la _cache_ de la información de instancias de Vagrant está desactualizada, debe limpiarla (antes de utilizar `vup`) y luego iniciar manualmente cada instancia con `vagrant up` para reconstruir la información de las instancias:
+2. Si la caché de la información de instancias de Vagrant está desactualizada, límpiela antes de utilizar `vup` y luego inicie manualmente cada instancia con `vagrant up` para reconstruir la información de las instancias:
    ```bash
    vagrant global-status --prune
    ```
 
-3. Para iniciar y conectarte a una instancia (por ejemplo, `webserver`):
+### **Utilizando VUP para gestionar mis máquinas Vagrant**
+
+Para iniciar una instancia Vagrant y conectarse a ella mediante SSH, use `vup` seguido del nombre o ID de la instancia.
+
+1. Para iniciar una instancia (por ejemplo, `webserver`):
    ```bash
-   vup webserver
+   vup -u webserver
    ```
 
-4. Para apagar la misma instancia:
+2. Para iniciar dos instancias a la vez (por ejemplo, `webserver` y `database`):
    ```bash
-   vup webserver -d
+   vup -u webserver -u database
    ```
 
-5. Para iniciar todas instancias de _Vagrant_:
+3. Para conectarse a una instancia (por ejemplo, `webserver`):
    ```bash
-   vup --all -u
+   vup -c webserver
    ```
 
-6. Para apagar todas instancias de _Vagrant_:
+4. Para conectarse a una instancia e iniciarla sin preguntar si está apagada (por ejemplo, `fileserver`):
    ```bash
-   vup --all -d
-   ```   
+   vup -c --quiet fileserver
+   ```
 
-## **«Self-Promotion»**
+5. Para mostrar información de todas las instancias de Vagrant:
+   ```bash
+   vup -s
+   ```
 
-Si lo desea, puede visitar mi canal de YouTube [MizaqScreencasts](https://www.youtube.com/MizaqScreencasts), seguirme en [Twitter](https://twitter.com/mismatso) o escribirme por [Telegram](https://t.me/mismatso).
+6. Para apagar la instancia `webserver`:
+   ```bash
+   vup -d webserver
+   ```
+
+7. Para iniciar todas las instancias de _Vagrant_:
+   ```bash
+   vup -u --all
+   ```
+
+8. Para apagar todas las instancias de _Vagrant_:
+   ```bash
+   vup -d --all
+   ```
+
+## **Self-Promotion**
+
+Si lo desea, puede:
+
+- Visitar mi canal de YouTube [MizaqScreencasts](https://www.youtube.com/MizaqScreencasts)
+- Seguirme en [Twitter](https://twitter.com/mismatso)
+- Contactarme por [Telegram](https://t.me/mismatso)
 
 ## **Licencia**
 
